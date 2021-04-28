@@ -1,0 +1,1 @@
+Game developed by mikele34! All right is reserved.
