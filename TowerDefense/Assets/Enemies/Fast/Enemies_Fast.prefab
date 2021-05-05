@@ -313,7 +313,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1360991219368177298, guid: 860955a4dd28bcf4f8f026f0594effcb, type: 3}
+  - {fileID: 2100000, guid: 59d320d1576152f448cf794f96528862, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1432,7 +1432,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8144086113650795088, guid: 860955a4dd28bcf4f8f026f0594effcb, type: 3}
+  - {fileID: 2100000, guid: 59d320d1576152f448cf794f96528862, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2292,12 +2292,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8958646954937239373}
   - component: {fileID: 3076993341835353399}
-  - component: {fileID: -3333897649253290006}
   - component: {fileID: 2205932275065864361}
+  - component: {fileID: -3333897649253290006}
   - component: {fileID: 4482393891499756717}
   m_Layer: 0
   m_Name: Enemies_Fast
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2339,6 +2339,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &2205932275065864361
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581698546935995895}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.31, y: 2.12, z: 1.41}
+  m_Center: {x: 0.013, y: 0.91, z: 0.11}
 --- !u!114 &-3333897649253290006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2357,19 +2370,6 @@ MonoBehaviour:
   worth: 25
   deathEffect: {fileID: 9068992870678110694, guid: ee935e7137f0cbe4f94c315bcc124e1e, type: 3}
   healtBar: {fileID: 5827092743842424762}
---- !u!65 &2205932275065864361
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8581698546935995895}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.31, y: 2.12, z: 1.41}
-  m_Center: {x: 0.013, y: 0.91, z: 0.11}
 --- !u!114 &4482393891499756717
 MonoBehaviour:
   m_ObjectHideFlags: 0
