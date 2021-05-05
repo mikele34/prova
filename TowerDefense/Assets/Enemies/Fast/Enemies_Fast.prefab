@@ -2294,6 +2294,7 @@ GameObject:
   - component: {fileID: 3076993341835353399}
   - component: {fileID: -3333897649253290006}
   - component: {fileID: 2205932275065864361}
+  - component: {fileID: 4482393891499756717}
   m_Layer: 0
   m_Name: Enemies_Fast
   m_TagString: Untagged
@@ -2369,6 +2370,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.31, y: 2.12, z: 1.41}
   m_Center: {x: 0.013, y: 0.91, z: 0.11}
+--- !u!114 &4482393891499756717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581698546935995895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92241056fbb671742b82df314394044c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8602089319247441913
 GameObject:
   m_ObjectHideFlags: 0
