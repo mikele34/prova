@@ -11,16 +11,21 @@ public class EnemyMoviment : MonoBehaviour
 
     Enemy enemy;
 
+    float degrees = 90;
+
     private void Start()
     {
         enemy = GetComponent<Enemy>();
-        target = Waypoints.points[0];
+        target = Waypoints.points[0];        
     }
 
     private void Update()
     {
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
+
+        Vector3 to = new Vector3(0, degrees, 0);
+        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
