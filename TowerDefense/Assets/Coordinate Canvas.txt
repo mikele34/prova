@@ -1,0 +1,31 @@
+/*overlay
+
+//Shop:18
+
+//Game
+
+            GOtext: 120
+            Round:200
+            text:45
+            Altro:60
+
+//Pause
+            Pausetxt:120
+            Continue:120
+            Two:80
+
+//Compl
+
+             LVLwon:120
+
+             Round:200
+             Txt:45
+
+             Continue:80
+             Menu:80
+
+//Bottom:100 (25/19)
+
+//Top:100 (-25/70)
+
+*/
