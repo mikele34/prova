@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: 11fdea179fd367547b080835cb578964
   - enabled: 1
-    path: Assets/Scenes/Menu/GameMode.unity
-    guid: afed6de2be869f34f9fe78403416906e
+    path: Assets/Scenes/Menu/TutorialLevel.unity
+    guid: e14ffd6009a45a643b8f3e08518854af
   - enabled: 1
     path: Assets/Scenes/Menu/LevelSelect.unity
     guid: b51aaef78fe0eaf48bee5ce91f1d9e59
@@ -23,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level03.unity
     guid: ca46ebfaa6028fd4483a0999d7d15ea4
-  - enabled: 1
-    path: Assets/Scenes/Levels/EndlessLevel.unity
-    guid: a18d0f93d2b34e64ab8e0da4d86960b1
   m_configObjects: {}

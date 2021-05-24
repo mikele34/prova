@@ -13,6 +13,18 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Tutorial()
+    {
+        levelToLoad = "TutorialLevel";
+        sceneFader.FadeTo(levelToLoad);
+    }
+
+    public void Back()
+    {
+        levelToLoad = "MainMenu";
+        sceneFader.FadeTo(levelToLoad);
+    }
+
     public void Quit()
     {
         Application.Quit();
