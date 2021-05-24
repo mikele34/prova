@@ -17,20 +17,9 @@ public class EndlessWaveSpawner : MonoBehaviour
 
     void Update()
     {
-        if (EnemiesAlive > 0)
-        {
-            return;
-        }
-
-        if (waveIndex == waves.Length)
-        {
-            gameManager.WinLevel();
-            this.enabled = false;
-        }
 
         if (coutdown <= 0)
         {
-            StartCoroutine(SpawnWave());
             coutdown = timeBetweenWaves;
             return;
         }
@@ -42,22 +31,6 @@ public class EndlessWaveSpawner : MonoBehaviour
         WaveCountdownText.text = string.Format("{0:00.00}", coutdown);
     }
 
-    IEnumerator SpawnWave()
-    {
-        PlayerStats.Rounds++;
-
-        Wave wave = waves[waveIndex];
-
-        EnemiesAlive = wave.count;
-
-        for (int i = 0; i < wave.count; i++)
-        {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f / wave.rate);
-        }
-
-        waveIndex++;
-    }
 
     void SpawnEnemy(GameObject enemy)
     {
