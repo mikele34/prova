@@ -19,7 +19,14 @@ public class WaveSpawner : MonoBehaviour
 
     int m_waveIndex = 0;
 
-    private void Update()
+
+    void Awake()
+    {
+        EnemiesAlive = 0;
+    }
+
+
+    void Update()
     {
         if (EnemiesAlive > 0)
         {

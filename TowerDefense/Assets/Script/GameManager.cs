@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject CompleteLevelUI;
 
+
     void Start()
     {
         GameIsOver = false;
@@ -18,8 +19,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (GameIsOver)
+
+        if (GameIsOver) 
+        {
             return;
+        }
+            
 
         if (PlayerStats.Lives <= 0)
         {
@@ -29,7 +34,6 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-
         GameIsOver = true;
         gameOverUI.SetActive(true);
     }
