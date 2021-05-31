@@ -20,12 +20,12 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        float t = 1f;
+        float m_time = 1f;
 
-        while (t > 0f)
+        while (m_time > 0f)
         {
-            t -= Time.deltaTime;
-            float a = curve.Evaluate(t);
+            m_time -= Time.deltaTime;
+            float a = curve.Evaluate(m_time);
             img.color = new Color (0f, 0f, 0f, a);
             yield return 0;
         }
@@ -33,12 +33,12 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator FadeOut(string scene)
     {
-        float t = 0f;
+        float m_time = 0f;
 
-        while (t < 1f)
+        while (m_time < 1f)
         {
-            t += Time.deltaTime;
-            float a = curve.Evaluate(t);
+            m_time += Time.deltaTime;
+            float a = curve.Evaluate(m_time);
             img.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }

@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float speed;
 
     public float startHealth = 100;
-    float health;
+    float m_health;
 
     public int worth = 50;
 
@@ -23,16 +23,16 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         speed = startSpeed;
-        health = startHealth;
+        m_health = startHealth;
     }
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        m_health -= amount;
 
-        healtBar.fillAmount = health / startHealth;
+        healtBar.fillAmount = m_health / startHealth;
 
-        if (health <= 0 && !isDead)
+        if (m_health <= 0 && !isDead)
         {
             Die();
         }

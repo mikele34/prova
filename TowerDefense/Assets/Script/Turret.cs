@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    Transform target;
-    Enemy targetEnemy;
+    Transform m_target;
+    Enemy m_targetEnemy;
 
     [Header("General")]
 
@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
     [Header("Use Bullets")]
     public GameObject bulletPrefab;
     public float fireRate = 1f;
-    float fireCountdown = 0f;
+    float m_fireCountdown = 0f;
 
     [Header("Use Laser")]
     public bool useLaser = false;
@@ -45,33 +45,33 @@ public class Turret : MonoBehaviour
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float shortestDistance = Mathf.Infinity;
+        float m_shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy< shortestDistance)
+            if (distanceToEnemy< m_shortestDistance)
             {
-                shortestDistance = distanceToEnemy;
+                m_shortestDistance = distanceToEnemy;
                 nearestEnemy = enemy;
             }
         }
 
-        if(nearestEnemy!= null && shortestDistance<=range)
+        if(nearestEnemy!= null && m_shortestDistance <= range)
         {
-            target= nearestEnemy.transform;
-            targetEnemy = nearestEnemy.GetComponent<Enemy>();
+            m_target = nearestEnemy.transform;
+            m_targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
-            target = null;
+            m_target = null;
         }
     }
 
     void Update()
     {
-        if (target== null)
+        if (m_target == null)
         {
             if (useLaser)
             {
@@ -94,19 +94,19 @@ public class Turret : MonoBehaviour
         }
         else
         {
-            if (fireCountdown <= 0)
+            if (m_fireCountdown <= 0)
             {
                 Shoot();
-                fireCountdown = 1f / fireRate;
+                m_fireCountdown = 1f / fireRate;
             }
 
-            fireCountdown -= Time.deltaTime;
+            m_fireCountdown -= Time.deltaTime;
         }        
     }
 
     void LockOnTarget()
     {
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = m_target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turretSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
@@ -114,8 +114,8 @@ public class Turret : MonoBehaviour
 
     void Laser()
     {
-        targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
-        targetEnemy.Slow(slowAmount);
+        m_targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        m_targetEnemy.Slow(slowAmount);
 
         if (!lineRenderer.enabled)
         {
@@ -126,11 +126,11 @@ public class Turret : MonoBehaviour
             
 
         lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.SetPosition(1, target.position);
+        lineRenderer.SetPosition(1, m_target.position);
 
-        Vector3 dir = firePoint.position - target.position;
+        Vector3 dir = firePoint.position - m_target.position;
 
-        impactEffect.transform.position = target.position + dir.normalized;
+        impactEffect.transform.position = m_target.position + dir.normalized;
 
         impactEffect.transform.rotation = Quaternion.LookRotation(dir);
     }
@@ -142,7 +142,7 @@ public class Turret : MonoBehaviour
 
         if(bullet != null)
         {
-            bullet.Seek(target);
+            bullet.Seek(m_target);
         }
     }
 

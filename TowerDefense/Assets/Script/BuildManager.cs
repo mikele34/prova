@@ -18,42 +18,42 @@ public class BuildManager : MonoBehaviour
     public GameObject buildEffect;
     public GameObject sellEffect;
 
-    TurretBlueprint turretToBuild;
-    Node selectedNode;
+    TurretBlueprint m_turretToBuild;
+    Node m_selectedNode;
 
     public NodeUI nodeUI;
 
-    public bool CanBuild { get { return turretToBuild != null; } }
-    public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
+    public bool CanBuild { get { return m_turretToBuild != null; } }
+    public bool HasMoney { get { return PlayerStats.Money >= m_turretToBuild.cost; } }
 
     public void SelectNode(Node node)
     {
-        if (selectedNode == node)
+        if (m_selectedNode == node)
         {
             DeselectNode();
             return;
         }
 
-        selectedNode = node;
-        turretToBuild = null;
+        m_selectedNode = node;
+        m_turretToBuild = null;
 
         nodeUI.SetTarget(node);
     }
 
     public void DeselectNode()
     {
-        selectedNode = null;
+        m_selectedNode = null;
         nodeUI.Hide();
     }
 
     public void SelectTurretToBuild(TurretBlueprint turret)
     {
-        turretToBuild = turret;
+        m_turretToBuild = turret;
         DeselectNode();
     }
 
     public TurretBlueprint GetTurretToBuild()
     {
-        return turretToBuild;
+        return m_turretToBuild;
     }
 }

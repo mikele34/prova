@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    Transform target;
+    Transform m_target;
 
     public float speed = 70f;
 
@@ -13,18 +13,18 @@ public class Bullet : MonoBehaviour
 
     public void Seek(Transform _target)
     {
-        target = _target;
+        m_target = _target;
     }
     
     void Update()
     {
-        if (target== null)
+        if (m_target == null)
         {
             Destroy(gameObject);
             return;
         }
 
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = m_target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
         if(dir.magnitude <= distanceThisFrame)
@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        transform.LookAt(target);
+        transform.LookAt(m_target);
     }
 
     void HitTarget ()
@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            Damage(target);
+            Damage(m_target);
         }
 
         Destroy(gameObject);

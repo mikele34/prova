@@ -15,14 +15,14 @@ public class RoundsSurvived : MonoBehaviour
     IEnumerator AnimateText()
     {
         roundsText.text = "0";
-        int round = 0;
+        int m_round = 0;
 
         yield return new WaitForSeconds(.7f);
 
-        while (round < PlayerStats.Rounds)
+        while (m_round < PlayerStats.Rounds)
         {
-            round++;
-            roundsText.text = round.ToString();
+            m_round++;
+            roundsText.text = m_round.ToString();
 
             yield return new WaitForSeconds(.5f);
         }
