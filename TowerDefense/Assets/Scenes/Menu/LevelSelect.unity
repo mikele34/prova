@@ -180,6 +180,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07be4bf6088f3eb498df1eb5daf7b90e, type: 3}
+--- !u!114 &302831787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 770595714433922906, guid: 3b0daff0698a0b147a49af04f1b5b5f9, type: 3}
+  m_PrefabInstance: {fileID: 1675231963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &337734277
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +313,7 @@ MonoBehaviour:
   levelButtons:
   - {fileID: 359767185}
   - {fileID: 920211497}
+  - {fileID: 302831787}
 --- !u!4 &608596584
 Transform:
   m_ObjectHideFlags: 0
