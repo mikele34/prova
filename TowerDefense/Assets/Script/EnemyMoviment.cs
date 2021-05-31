@@ -22,6 +22,7 @@ public class EnemyMoviment : MonoBehaviour
     private void Update()
     {
         Vector3 dir = target.position - transform.position;
+        //Debug.Log(dir.normalized);
         transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
 
         Vector3 to = new Vector3(0, degrees, 0);

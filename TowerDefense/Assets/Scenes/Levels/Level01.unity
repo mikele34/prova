@@ -15696,8 +15696,12 @@ MonoBehaviour:
   panSpeed: 30
   panBorderThickness: 10
   scrollSpeed: 5
-  MinY: 10
-  MaxY: 80
+  MinY_x: -6
+  MaxY_x: 77
+  MinY_y: 25
+  MaxY_y: 79
+  MinY_z: -117
+  MaxY_z: -19
 --- !u!1001 &1662547810
 PrefabInstance:
   m_ObjectHideFlags: 0
