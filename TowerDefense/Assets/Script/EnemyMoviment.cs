@@ -11,7 +11,9 @@ public class EnemyMoviment : MonoBehaviour
 
     Enemy enemy;
 
-    float degrees = 90;
+    float degrees;
+
+    Vector3 to;
 
     private void Start()
     {
@@ -19,14 +21,14 @@ public class EnemyMoviment : MonoBehaviour
         target = Waypoints.points[0];        
     }
 
-    private void Update()
+    void Update()
     {
         Vector3 dir = target.position - transform.position;
-        //Debug.Log(dir.normalized);
         transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
 
-        Vector3 to = new Vector3(0, degrees, 0);
-        transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, to, Time.deltaTime);
+        Quaternion lookrotation = Quaternion.LookRotation(dir.normalized);
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookrotation, 8.0f * Time.deltaTime);
+
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
