@@ -11,11 +11,13 @@ public class EnemyMoviment : MonoBehaviour
 
     Enemy m_enemy;
 
-    private void Start()
+
+    void Start()
     {
         m_enemy = GetComponent<Enemy>();
         m_target = Waypoints.points[0];        
     }
+
 
     void Update()
     {
@@ -35,6 +37,7 @@ public class EnemyMoviment : MonoBehaviour
         m_enemy.speed = m_enemy.startSpeed;
     }
 
+
     void GetNextWaypoint()
     {
         if (m_wavepointIndex >= Waypoints.points.Length - 1)
@@ -46,6 +49,7 @@ public class EnemyMoviment : MonoBehaviour
         m_wavepointIndex++;
         m_target = Waypoints.points[m_wavepointIndex];
     }
+
 
     void EndPath()
     {

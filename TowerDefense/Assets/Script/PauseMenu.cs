@@ -9,13 +9,15 @@ public class PauseMenu : MonoBehaviour
 
     public SceneFader sceneFader;
 
-    private void Update()
+
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             Toggle();
         }
     }
+
 
     public void Toggle()
     {
@@ -31,11 +33,13 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+
     public void Retry()
     {
         Toggle();
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
+
 
     public void Menu()
     {

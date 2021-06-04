@@ -7,10 +7,12 @@ public class RoundsSurvived : MonoBehaviour
 {
     public Text roundsText;
 
-    private void OnEnable()
+
+    void OnEnable()
     {
         StartCoroutine(AnimateText());
     }
+
 
     IEnumerator AnimateText()
     {

@@ -42,6 +42,7 @@ public class Turret : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
 
+
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -68,6 +69,7 @@ public class Turret : MonoBehaviour
             m_target = null;
         }
     }
+
 
     void Update()
     {
@@ -104,6 +106,7 @@ public class Turret : MonoBehaviour
         }        
     }
 
+
     void LockOnTarget()
     {
         Vector3 dir = m_target.position - transform.position;
@@ -111,6 +114,7 @@ public class Turret : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turretSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
+
 
     void Laser()
     {
@@ -135,6 +139,7 @@ public class Turret : MonoBehaviour
         impactEffect.transform.rotation = Quaternion.LookRotation(dir);
     }
 
+
     void Shoot()
     {
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -146,7 +151,8 @@ public class Turret : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);

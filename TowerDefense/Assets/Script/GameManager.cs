@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         GameIsOver = false;
     }
 
+
     void Update()
     {
 
@@ -32,11 +33,13 @@ public class GameManager : MonoBehaviour
         } 
     }
 
+
     void EndGame()
     {
         GameIsOver = true;
         gameOverUI.SetActive(true);
     }
+
 
     public void WinLevel()
     {

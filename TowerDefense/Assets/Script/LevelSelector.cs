@@ -6,6 +6,7 @@ public class LevelSelector : MonoBehaviour
     public SceneFader fader;
     public Button[] levelButtons;
 
+
     void Start()
     {
         int m_levelReached = PlayerPrefs.GetInt("levelReached", 1);
@@ -18,6 +19,7 @@ public class LevelSelector : MonoBehaviour
             }            
         }
     }
+
 
     public void Select (string levelName)
     {

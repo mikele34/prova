@@ -20,11 +20,13 @@ public class Enemy : MonoBehaviour
 
     bool isDead = false;
 
-    private void Start()
+
+    void Start()
     {
         speed = startSpeed;
         m_health = startHealth;
     }
+
 
     public void TakeDamage(float amount)
     {
@@ -38,10 +40,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
     public void Slow (float pct)
     {
         speed = startSpeed * (1f - pct);
     }
+
 
     void Die()
     {

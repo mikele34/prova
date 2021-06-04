@@ -12,6 +12,7 @@ public class NodeUI : MonoBehaviour
 
     Node m_target;
 
+
     public void SetTarget(Node _target)
     {
         m_target = _target;
@@ -34,16 +35,19 @@ public class NodeUI : MonoBehaviour
         ui.SetActive(true);
     }
 
+
     public void Hide()
     {
         ui.SetActive(false);
     }
+
 
     public void Upgrade()
     {
         m_target.UpgradeTurret();
         BuildManager.instance.DeselectNode();
     }
+
 
     public void Sell()
     {

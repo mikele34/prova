@@ -8,15 +8,18 @@ public class SceneFader : MonoBehaviour
     public Image img;
     public AnimationCurve curve;
 
+
     void Start()
     {
         StartCoroutine(FadeIn());
     }
 
+
     public void FadeTo(string scene)
     {
         StartCoroutine(FadeOut(scene));
     }
+
 
     IEnumerator FadeIn()
     {
@@ -30,6 +33,7 @@ public class SceneFader : MonoBehaviour
             yield return 0;
         }
     }
+
 
     IEnumerator FadeOut(string scene)
     {

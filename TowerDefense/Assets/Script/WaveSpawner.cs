@@ -20,10 +20,12 @@ public class WaveSpawner : MonoBehaviour
     int m_waveIndex = 0;
 
 
+
     void Awake()
     {
         EnemiesAlive = 0;
     }
+
 
 
     void Update()
@@ -53,6 +55,7 @@ public class WaveSpawner : MonoBehaviour
         WaveCountdownText.text = string.Format("{0:00.00}", m_coutdown);
     }
 
+
     IEnumerator SpawnWave ()
     {
         PlayerStats.Rounds++;
@@ -69,6 +72,7 @@ public class WaveSpawner : MonoBehaviour
 
         m_waveIndex++;                
     }
+
 
     void SpawnEnemy(GameObject enemy)
     {

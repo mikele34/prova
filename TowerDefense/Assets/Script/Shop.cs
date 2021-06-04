@@ -8,20 +8,24 @@ public class Shop : MonoBehaviour
 
     BuildManager m_buildManager;
 
+
     void Start()
     {
         m_buildManager = BuildManager.instance;
     }
+
 
     public void SelectStandardTurret()
     {
         m_buildManager.SelectTurretToBuild(standardTurret);        
     }
 
+
     public void SelectMissileTurret()
     {
         m_buildManager.SelectTurretToBuild(missileTurret);        
     }
+
 
     public void SelectLaserTurret()
     {
