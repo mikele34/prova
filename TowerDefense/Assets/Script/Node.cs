@@ -37,8 +37,6 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;        
 
         if (turret != null)
         {
@@ -109,22 +107,18 @@ public class Node : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
 
-        if (!m_buildManager.CanBuild)
-            return;
-
-        if (m_buildManager.HasMoney)
+        if (m_buildManager.CanBuild)
         {
-            m_rend.material.color = hoverColor;
-        }
-        else
-        {
-            m_rend.material.color = notEnoughtColor;
-        }
-
-        
+            if (m_buildManager.HasMoney())
+            {
+                m_rend.material.color = hoverColor;
+            }
+            else
+            {
+                m_rend.material.color = notEnoughtColor;
+            }
+        }        
     }
 
 

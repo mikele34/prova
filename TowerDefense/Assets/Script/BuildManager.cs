@@ -15,7 +15,25 @@ public class BuildManager : MonoBehaviour
     public NodeUI nodeUI;
 
     public bool CanBuild { get { return m_turretToBuild != null; } }
-    public bool HasMoney { get { return PlayerStats.Money >= m_turretToBuild.cost; } }
+
+    public bool HasMoney()
+    {
+        if (m_turretToBuild != null)
+        {
+            if (PlayerStats.Money >= m_turretToBuild.cost)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 
     void Awake()
